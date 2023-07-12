@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController
 {
     /**
-     * @Route("/")
+     * @Route("/{param}",)
      * @return Response
      */
- public function index(){
-     return new Response("Welcome in Symfony_");
+ public function index(string $param){
+     return new Response("Mr. $param,Welcome in Symfony");
  }
 }
