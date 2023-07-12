@@ -15,6 +15,6 @@ class AppController extends AbstractController
      */
  public function index(string $name)
  {
-    return $this-> render('base.html.twig', ['name' => $name]);
+    return $this-> render('home.html.twig', ['name' => $name]);
  }
 }
