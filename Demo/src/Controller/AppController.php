@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AppController
+class AppController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/{name}")
      * @return Response
      */
- public function index(Request $req)
+ public function index(string $name)
  {
-     $name = $req->get('name');
-     return new Response("Mr. $name,Welcome in Symfony");
+    return $this-> render('base.html.twig', ['name' => $name]);
  }
 }
